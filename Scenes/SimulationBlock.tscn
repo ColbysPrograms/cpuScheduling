@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckjjg3tmqwp61"]
+
+[ext_resource type="Texture2D" uid="uid://dpp1pbl6a7i4a" path="res://Assets/TransparentRect.png" id="1_c1sip"]
+[ext_resource type="Script" uid="uid://c42kra7h14kne" path="res://Scripts/simulation_block.gd" id="1_fbmfh"]
+
+[node name="SimulationBlock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fbmfh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_c1sip")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "P"

@@ -1,40 +1,40 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1qkoa5hnqqk4"]
 
-[sub_resource type="GDScript" id="GDScript_wvg1a"]
-script/source = "extends Control
-"
+[ext_resource type="Script" uid="uid://cbwlh2fbkd4so" path="res://Scripts/program.gd" id="1_xhqcq"]
 
 [node name="Program" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_xhqcq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_right = 433.0
+offset_bottom = 31.0
+theme_override_constants/separation = 60
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="PIDLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "         P1"
-script = SubResource("GDScript_wvg1a")
 
-[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+[node name="BurstTimeLineEdit" type="LineEdit" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "1"
 
-[node name="Label2" type="Label" parent="HBoxContainer"]
+[node name="PriorityLineEdit" type="LineEdit" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Priority"
+text = "1"
 
-[node name="LineEdit2" type="LineEdit" parent="HBoxContainer"]
+[node name="ArrivalTimeLineEdit" type="LineEdit" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "1"
 
-[node name="Label3" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = "Arrival Time"
-
-[node name="LineEdit3" type="LineEdit" parent="HBoxContainer"]
-layout_mode = 2
+[connection signal="text_changed" from="HBoxContainer/BurstTimeLineEdit" to="." method="_on_burst_time_line_edit_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/PriorityLineEdit" to="." method="_on_priority_line_edit_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/ArrivalTimeLineEdit" to="." method="_on_arrival_time_line_edit_text_changed"]

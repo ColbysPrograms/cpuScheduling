@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://diw8w3pwjq4ks"]
+
+[ext_resource type="Script" uid="uid://1dnf7qiflaex" path="res://Scripts/top_buttons.gd" id="1_4f76i"]
+
+[node name="TopButtons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4f76i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0430556
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 50
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AlgorithmsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Algorithms"
+
+[node name="ProgramsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Programs"
+
+[node name="ThreadsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Threads"
+
+[connection signal="pressed" from="HBoxContainer/AlgorithmsButton" to="." method="_on_algorithms_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ProgramsButton" to="." method="_on_programs_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ThreadsButton" to="." method="_on_threads_button_pressed"]

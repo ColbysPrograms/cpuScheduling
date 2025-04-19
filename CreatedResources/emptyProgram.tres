@@ -1,3 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://drgf3u46vjm2p"]
+[gd_resource type="Resource" script_class="ProgramResources" load_steps=2 format=3 uid="uid://drgf3u46vjm2p"]
+
+[ext_resource type="Script" uid="uid://hyvoyqwiahwr" path="res://Resources/programResources.gd" id="1_sk102"]
 
 [resource]
+script = ExtResource("1_sk102")
+burstTime = 1
+priority = 1
+arrivalTime = 1
+index = 0
+thread = 0

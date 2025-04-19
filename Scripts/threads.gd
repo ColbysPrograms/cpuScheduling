@@ -1,11 +1,15 @@
 class_name ThreadsMenu
 extends Control
 
-func _on_algorithms_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Algorithms.tscn")
+@onready var threadCountList = %ThreadCountList
 
-func _on_programs_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Programs.tscn")
+var database: DatabaseResources
 
-func _on_threads_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Threads.tscn")
+func _ready() -> void:
+	database = DatabaseResources.loadOrCreate()
+	threadCountList.select(database.threadIndex)
+
+func _on_item_list_item_selected(index: int) -> void:
+	database.threadCount = threadCountList.get_item_text(index)
+	database.threadIndex = index
+	database.save()

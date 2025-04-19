@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8enyd6uqg2jv"]
+
+[ext_resource type="Script" uid="uid://1wr7yd7og0w5" path="res://Scripts/run_simulation_button.gd" id="1_5t2tc"]
+
+[node name="RunSimulationButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Run Simulation"
+script = ExtResource("1_5t2tc")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
